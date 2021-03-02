@@ -1,7 +1,7 @@
 # CS165-Porject3
 
 ## Part 1 : uid_1022_crack
-For part 1 we first found the end of the buffer by printing 'A's untill we seg-faulted. After finding the right amount of 'A's we then found the address for log_result() so we could overwrite the stack ebp and the return address. After we found those locations we passed in the hex address of log_result() to create the file uid_1022_crack.
+For part 1 we first found the end of the buffer by printing 'A's untill we seg-faulted. After finding the right amount of 'A's we then found the address for log_result() by using the disassemble command so we could overwrite the stack ebp and the return address. After we found those locations we passed in the hex address of log_result() to create the file uid_1022_crack.
 
 ## Part 2 : uid_1022_crack_advanced
 For part 2 we followed a similar process. We first started by finding the address for log_result_advanced() by disassembling the function. We then look for the first function that shows up after. We do this to find how much of a buffer we need for the call function since we still want to run the call function. After we find the buffer we then overwrite the old return address. After the buffer we also add the needed payload for log_result_function().  
